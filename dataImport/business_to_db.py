@@ -5,15 +5,15 @@ import MySQLdb
 
 db = MySQLdb.connect(host="localhost",    # your host, usually localhost
                      user="root",         # your username
-                     passwd="Aj19881122",  # your password
+                     passwd="root",  # your password
                      db="yelp_dataset")        # name of the data base
 c = db.cursor()
 
 # Create tables
 print("Creating businesses table.")
 c.execute('''create table businesses
-         (business_id VARCHAR(25) primary key,
-          name CHAR(80) CHARACTER SET utf8 COLLATE utf8_unicode_ci,
+         (business_id CHAR(22) primary key,
+          name VARCHAR(80),
           address VARCHAR(140),
           city VARCHAR(50),
           state VARCHAR(4),
